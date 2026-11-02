@@ -1,4 +1,5 @@
 """The README says it lists every row of output/tests.csv, in groups by status. Hold it to that."""
+import json
 import re
 from pathlib import Path
 
@@ -24,6 +25,13 @@ def listed():
         if m:
             rows[m[1], m[2]] = (status, number(m[3]), number(m[4]), number(m[5]), int(m[6]))
     return rows
+
+
+def test_first_median_word_count_matches_the_results():
+    words = json.loads((ROOT / "output" / "results.json").read_text())["statements"]["median_words"]["2009"]
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    assert f"{words} median words" in readme
+    assert f"a median of {words} words in 2009" in readme
 
 
 def test_every_row_is_listed_under_its_status_with_its_numbers():

@@ -12,7 +12,7 @@ How the Bank of Canada's language has changed since 2001, and when bond markets 
 
 | Question | Methods | Answer |
 |---|---|---|
-| [How has the language changed?](#1-how-has-the-language-changed) | Phrase counts, TF-IDF similarity, topic model, reading grade | Longer and easier to read: 444 median words and grade 14.6 in 2009, 581 and 11.7 in 2026. Topics follow events. |
+| [How has the language changed?](#1-how-has-the-language-changed) | Phrase counts, TF-IDF similarity, topic model, reading grade | Longer and easier to read: 442.5 median words and grade 14.6 in 2009, 581 and 11.7 in 2026. Topics follow events. |
 | [Which yields respond, and when?](#2-which-yields-respond-and-when) | Event study, US yield control, bootstrap | On holds, the 2-year moves most. That shape also appears in 2001-2008 statements kept back as a test. Which holds stand out changes over time. |
 | [How much is already priced in?](#3-how-much-is-already-priced-in) | Regression on decision size, bill move, survey | Most of it. Decision size explains 3% of the 2-year move. |
 | [Does a change in wording line up with the reaction?](#4-does-a-change-in-wording-line-up-with-the-reaction) | Fixed word list, placebo days, kept-back test, walk-forward | Not established. On holds, +0.08 in 2009-2026 and +0.35 in the 2001-2008 test, whose range includes zero. |
@@ -25,7 +25,7 @@ All ranges are 95%. A basis point (bp) is a hundredth of a percentage point.
 
 ![Statements' length, reading grade and similarity by year](figures/language.png)
 
-Statements have grown from a median of 444 words in 2009 to 581 so far in 2026, with a high of 650 in 2025. The reading grade fell from 14.6 to 11.7, so they are longer but simpler.
+Statements have grown from a median of 442.5 words in 2009 to 581 so far in 2026, with a high of 650 in 2025. The reading grade fell from 14.6 to 11.7, so they are longer but simpler.
 
 ![Share of statements using each phrase, by year](figures/phrases.png)
 
