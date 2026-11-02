@@ -59,16 +59,44 @@ The Bank's Market Participants Survey gives another view of expectations. The me
 
 The test is on holds, where the decision itself is no news. The tone score counts direction words in sentences about the economy, from a fixed list.
 
-| Holds | Rank correlation | Status |
-|---|---|---|
-| 2009-2026, on the day | +0.08 (−0.10 to +0.26), n = 108 | Looked at first |
-| 2009-2026, the day before (placebo) | −0.17 (−0.36 to +0.01) | Larger in size than the real result |
-| **2001-2008, on the day** | **+0.35 (−0.03 to +0.65), n = 29** | **Kept back and tested after [the plan](ANALYSIS_PLAN.md) was committed** |
-| 2001-2008, the day before and after (placebos) | −0.24 and −0.20, with wide ranges | Kept-back test |
-| 2018-2026, on the day | +0.33 (+0.05 to +0.58), n = 46 | Found after seeing the full result, so a lead only |
-| 2009-2017, on the day | −0.10 (−0.32 to +0.13), n = 62 | Found after seeing the full result |
+All 16 rows of [`output/tests.csv`](output/tests.csv) are below, whatever they show, as rank correlations with 95% ranges. The groups keep apart what was fixed in advance and what wasn't.
 
-The plan said the idea would be supported only if the kept-back result had a range excluding zero and clearly smaller placebos. It missed on the range, so the answer is "not established". It may be real in some periods, but these data can't show it. [Every comparison](output/tests.csv) is listed, whatever it shows.
+**Planned test: kept back, and tested after [the plan](ANALYSIS_PLAN.md) was committed**
+
+| Sample | Comparison | Rank correlation | n |
+|---|---|---|---:|
+| **2001-2008** | **Holds: tone change vs 2-year move** | **+0.35 (−0.03 to +0.65)** | **29** |
+| 2001-2008 | Holds: tone change vs move the day before (placebo) | −0.24 (−0.64 to +0.17) | 29 |
+| 2001-2008 | Holds: tone change vs move the day after (placebo) | −0.20 (−0.57 to +0.18) | 29 |
+| 2001-2008 | Holds: novelty vs size of move | +0.22 (−0.15 to +0.58) | 29 |
+
+**First look: seen before the plan was written, and they shaped it, so they can't confirm themselves**
+
+| Sample | Comparison | Rank correlation | n |
+|---|---|---|---:|
+| 2009-2026 | Holds: tone change vs 2-year move | +0.08 (−0.10 to +0.26) | 108 |
+| 2009-2026 | Holds: tone change vs move the day before (placebo) | −0.17 (−0.36 to +0.01) | 108 |
+| 2009-2026 | Holds: tone change vs move the day after (placebo) | −0.04 (−0.22 to +0.15) | 108 |
+| 2009-2026 | All decisions: tone change vs 2-year move | +0.11 (−0.04 to +0.27) | 141 |
+| 2009-2026 | All decisions: novelty vs size of move | +0.17 (+0.01 to +0.32) | 141 |
+| 2017-2026 | Same-day move in USD/CAD vs 2-year move | −0.47 (−0.64 to −0.29) | 78 |
+| 2017-2026 | Two-day move in USD/CAD vs 2-year move | −0.48 (−0.65 to −0.28) | 78 |
+
+**After seeing results: periods and filters chosen after the first look, so leads at most**
+
+| Sample | Comparison | Rank correlation | n |
+|---|---|---|---:|
+| 2009-2017 | Holds: tone change vs 2-year move | −0.10 (−0.32 to +0.13) | 62 |
+| 2018-2026 | Holds: tone change vs 2-year move | +0.33 (+0.05 to +0.58) | 46 |
+| 2018-2026 | Holds: tone change vs move the day before (placebo) | −0.16 (−0.43 to +0.11) | 46 |
+| 2018-2026 | Holds: tone change vs move the day after (placebo) | +0.11 (−0.16 to +0.36) | 46 |
+| 2021-2026 | Holds without a Fed decision that day: tone change vs 2-year move | +0.52 (+0.11 to +0.83) | 21 |
+
+The plan said the idea would be supported only if the kept-back result had a range excluding zero and clearly smaller placebos. It missed on the range, so the answer is "not established". It may be real in some periods, but these data can't show it.
+
+The largest number on wording, +0.52, is also the weakest evidence: 21 holds, in a sample cut after seeing the results, with no placebo days and a wide range. Like the 2018-2026 lead, it can only be tested on statements after 2 November 2026. In the first look, the day-before placebo is larger in size than the real result.
+
+Five of the 16 ranges exclude zero, and with this many comparisons some will by chance. Two of the five are USD/CAD, a second market price that can move on the same news as the 2-year yield, so they say nothing about wording. The plan's other two tests compare variances rather than ranks, so they are in [`output/maturity.csv`](output/maturity.csv) and section 2.
 
 A model that learns from the words themselves shows the risk. With more words than events, TF-IDF ridge regression gets an R² of 0.99 on past holds and −0.17 on later ones, worse than guessing the average. I left out a sentence classifier, because its labels would need someone other than the author of the test.
 
