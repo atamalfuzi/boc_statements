@@ -1,0 +1,53 @@
+sample,days,maturity,n,ratio,lo,hi,median_abs,ordinary_median_abs
+early,All announcements,m3,64,3.015,1.268,6.263,2.669,1.146
+early,All announcements,y2,64,3.491,2.009,5.208,4.602,1.916
+early,All announcements,y5,64,3.63,1.507,7.108,3.429,1.784
+early,All announcements,y10,64,1.357,0.886,1.822,2.132,1.675
+early,Hikes,m3,15,0.516,0.232,0.977,5.191,1.146
+early,Hikes,y2,15,2.696,1.074,4.532,5.104,1.916
+early,Hikes,y5,15,1.413,0.742,2.028,3.346,1.784
+early,Hikes,y10,15,0.839,0.34,1.308,1.653,1.675
+early,Cuts,m3,20,6.359,1.974,14.436,6.476,1.146
+early,Cuts,y2,20,5.35,2.231,8.532,6.019,1.916
+early,Cuts,y5,20,8.086,1.856,17.57,4.769,1.784
+early,Cuts,y10,20,2.096,1.094,3.05,2.644,1.675
+early,Holds,m3,29,1.323,0.169,3.639,1.076,1.146
+early,Holds,y2,29,2.406,0.873,4.41,3.385,1.916
+early,Holds,y5,29,1.675,0.674,2.803,2.087,1.784
+early,Holds,y10,29,1.095,0.457,1.785,1.325,1.675
+early,"Holds, report a day or more later",m3,13,0.16,0.055,0.328,1.32,1.146
+early,"Holds, report a day or more later",y2,13,0.958,0.346,1.494,3.385,1.916
+early,"Holds, report a day or more later",y5,13,0.821,0.206,1.506,2.03,1.784
+early,"Holds, report a day or more later",y10,13,0.442,0.191,0.671,1.325,1.675
+early,"Holds, no report that month",m3,16,2.198,0.177,5.765,0.989,1.146
+early,"Holds, no report that month",y2,16,3.58,0.757,6.715,3.265,1.916
+early,"Holds, no report that month",y5,16,2.35,0.514,4.127,2.719,1.784
+early,"Holds, no report that month",y10,16,1.555,0.349,2.762,1.681,1.675
+main,All announcements,m3,142,7.044,3.457,11.668,1.091,0.823
+main,All announcements,y2,142,4.082,2.451,6.126,2.349,1.349
+main,All announcements,y5,142,2.938,1.861,4.287,2.462,1.549
+main,All announcements,y10,142,1.614,1.077,2.266,1.61,1.499
+main,Hikes,m3,19,16.15,2.923,30.955,3.192,0.823
+main,Hikes,y2,19,8.451,1.628,17.642,5.276,1.349
+main,Hikes,y5,19,5.388,1.116,11.878,2.853,1.549
+main,Hikes,y10,19,3.809,0.956,7.696,1.525,1.499
+main,Cuts,m3,15,20.972,3.445,43.16,6.823,0.823
+main,Cuts,y2,15,7.562,1.366,16.295,5.008,1.349
+main,Cuts,y5,15,4.953,0.753,11.475,3.109,1.549
+main,Cuts,y10,15,1.864,0.574,3.602,2.526,1.499
+main,Holds,m3,108,1.352,0.718,2.14,0.98,0.823
+main,Holds,y2,108,2.463,1.531,3.551,2.012,1.349
+main,Holds,y5,108,2.102,1.466,2.809,2.217,1.549
+main,Holds,y10,108,1.141,0.774,1.546,1.501,1.499
+main,"Holds, report the same day",m3,40,1.628,0.486,3.158,0.98,0.823
+main,"Holds, report the same day",y2,40,3.056,1.187,5.444,2.163,1.349
+main,"Holds, report the same day",y5,40,2.288,1.14,3.626,2.507,1.549
+main,"Holds, report the same day",y10,40,1.067,0.514,1.795,1.635,1.499
+main,"Holds, report a day or more later",m3,13,2.39,0.695,4.318,1.823,0.823
+main,"Holds, report a day or more later",y2,13,5.715,2.219,8.88,6.334,1.349
+main,"Holds, report a day or more later",y5,13,4.073,1.754,6.07,5.867,1.549
+main,"Holds, report a day or more later",y10,13,1.676,0.663,2.386,3.257,1.499
+main,"Holds, no report that month",m3,55,0.785,0.353,1.269,0.98,0.823
+main,"Holds, no report that month",y2,55,1.221,0.637,1.908,1.992,1.349
+main,"Holds, no report that month",y5,55,1.412,0.796,2.109,1.693,1.549
+main,"Holds, no report that month",y10,55,0.995,0.567,1.468,1.23,1.499

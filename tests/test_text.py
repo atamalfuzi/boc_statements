@@ -3,7 +3,7 @@ import pandas as pd
 
 from data import STATEMENTS, decision_word, read_fed, read_survey, read_valet
 from estimate import adjusted_moves, spearman, variance_ratio
-from text import compare, decode, parse, reading_grade, sentences, tone
+from text import compare, decode, parse, reading_grade, sentences, strip, tone
 
 PAGE = """<h1 class="post-heading">Bank of Canada holds rate at 2&frac14;%</h1>
 <main id="main-content"><div class='post-date'>October 28, 2026</div>
@@ -16,6 +16,10 @@ def test_parse_drops_the_information_note():
     assert p["date"] == "October 28, 2026"
     assert p["text"] == "Inflation is rising. Growth is strong."
     assert p["note"]
+
+
+def test_strip_closes_the_space_tags_leave_before_punctuation():
+    assert strip("<p>The <em>Report</em> , and <a href='x'>more</a> .</p>") == "The Report, and more."
 
 
 def test_parse_returns_nothing_for_other_pages():

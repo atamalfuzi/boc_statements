@@ -13,8 +13,13 @@ LISTS = dict(
 NOTE = re.compile(r"Information note|[^.!?]*\bnext scheduled date", re.I)
 
 
+def tidy(text):
+    """Removing tags leaves a space before punctuation that followed italics or a link."""
+    return re.sub(r"\s+([,.;:!?)])", r"\1", re.sub(r"\s+", " ", text)).strip()
+
+
 def strip(fragment):
-    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", fragment))).strip()
+    return tidy(html.unescape(re.sub(r"<[^>]+>", " ", fragment)))
 
 
 def decode(raw):

@@ -73,8 +73,10 @@ def decision_word(title):
 def update_statements():
     have = pd.read_csv(STATEMENTS, keep_default_na=False) if STATEMENTS.exists() else pd.DataFrame(columns=["date", "url", "title", "headline_decision", "text"])
     seen, rows = set(have.url), []
+    latest = have.date.max()[:7].replace("-", "/") if len(have) else ""
     for url in statement_urls():
-        if url in seen:
+        # Older pages not in the file were looked at once and aren't scheduled decisions, so don't fetch them again.
+        if url in seen or url.split(".ca/")[1][:7] < latest:
             continue
         page = parse(decode(fetch(url)))
         time.sleep(PAUSE)
@@ -149,15 +151,20 @@ def read_survey(page):
     date = pd.Timestamp(re.search(r"post-date'>\s*([A-Z][a-z]+ \d+, \d{4})", page).group(1))
     for table in re.findall(r"<table.*?</table>", page, re.S):
         rows = [[strip(c) for c in re.findall(r"<t[dh].*?</t[dh]>", r, re.S)] for r in re.findall(r"<tr.*?</tr>", table, re.S)]
-        if len(rows) > 2 and rows[0] and "Policy interest rate" in " ".join(rows[0]) and rows[1][0].isdigit():
-            year, previous, out = int(rows[1][0]), 0, []
-            for row in rows[2:]:
-                if row[0] not in MONTHS:
-                    break  # quarterly rows further out are not meetings
+        if len(rows) < 3 or not rows[0] or "Policy interest rate" not in " ".join(rows[0]):
+            continue
+        year, previous, out = None, 0, []
+        for row in rows[1:]:  # the year sits in the header row in some surveys and on a row of its own in others
+            if row[0].isdigit():
+                year, previous = int(row[0]), 0
+            elif row[0] in MONTHS and year:
                 month = MONTHS.index(row[0]) + 1
                 year += month < previous
                 previous = month
                 out.append(dict(published=date, year=year, month=month, median=float(row[2])))
+            elif year and row[0]:
+                break  # quarterly rows further out are not meetings
+        if out:
             return out
     return []
 

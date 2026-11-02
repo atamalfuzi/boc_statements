@@ -1,0 +1,17 @@
+sample,status,comparison,n,rho,lo,hi
+2001-2008,planned test,Holds: tone change vs 2-year move,29,0.353,-0.03,0.653
+2001-2008,planned test,Holds: tone change vs move the day before (placebo),29,-0.236,-0.642,0.171
+2001-2008,planned test,Holds: tone change vs move the day after (placebo),29,-0.204,-0.567,0.181
+2001-2008,planned test,Holds: novelty vs size of move,29,0.223,-0.147,0.575
+2009-2026,first look,Holds: tone change vs 2-year move,108,0.081,-0.104,0.264
+2009-2026,first look,Holds: tone change vs move the day before (placebo),108,-0.173,-0.358,0.014
+2009-2026,first look,Holds: tone change vs move the day after (placebo),108,-0.04,-0.223,0.15
+2009-2017,after seeing results,Holds: tone change vs 2-year move,62,-0.099,-0.317,0.135
+2018-2026,after seeing results,Holds: tone change vs 2-year move,46,0.334,0.047,0.584
+2018-2026,after seeing results,Holds: tone change vs move the day before (placebo),46,-0.161,-0.434,0.113
+2018-2026,after seeing results,Holds: tone change vs move the day after (placebo),46,0.113,-0.158,0.363
+2021-2026,after seeing results,Holds without a Fed decision that day: tone change vs 2-year move,21,0.525,0.109,0.834
+2009-2026,first look,All decisions: tone change vs 2-year move,141,0.114,-0.042,0.266
+2009-2026,first look,All decisions: novelty vs size of move,141,0.171,0.013,0.324
+2017-2026,first look,Same-day move in USD/CAD vs 2-year move,78,-0.475,-0.636,-0.289
+2017-2026,first look,Two-day move in USD/CAD vs 2-year move,78,-0.482,-0.655,-0.281
